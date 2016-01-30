@@ -1,3 +1,4 @@
-on init
-	write /sys/fs/selinux/enforce 0
+on early-init
+	write /tmp/test "test"
+	setenforce permissive
 	write /proc/sys/kernel/hung_task_timeout_secs 0

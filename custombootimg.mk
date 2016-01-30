@@ -8,6 +8,7 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) \
 	#cp device/samsung/v1awifi/recovery/init out/target/product/v1awifi/recovery/root/init
 	chmod 644 out/target/product/v1awifi/recovery/root/init.rc
 	chmod 644 out/target/product/v1awifi/recovery/root/default.prop
+	chmod 644 out/target/product/v1awifi/recovery/root/init.recovery.universal5420.rc
 	(cd out/target/product/v1awifi/recovery/root/ && find * | sort | cpio -o -H newc) | gzip > $(recovery_ramdisk)
 	@echo ----- Making recovery image ------
 	$(MKBOOTIMG_BIN) --kernel $(TARGET_PREBUILT_KERNEL) --ramdisk $(recovery_ramdisk) --base $(BOARD_KERNEL_BASE) --pagesize $(BOARD_KERNEL_PAGESIZE) $(BOARD_MKBOOTIMG_ARGS) --output $@
