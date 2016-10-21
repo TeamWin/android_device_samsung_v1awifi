@@ -27,6 +27,7 @@ BOARD_KERNEL_CMDLINE :=
 BOARD_KERNEL_BASE := 0x10008000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x11000000 --tags_offset 0x10000100
+BOARD_CUSTOM_BOOTIMG_MK :=  device/samsung/v2awifi/bootimg.mk
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x00A00000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x00A00000
@@ -36,7 +37,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 
-TARGET_PREBUILT_KERNEL := device/samsung/v1awifi/kernAl
+TARGET_PREBUILT_KERNEL := device/samsung/v1awifi/kernel
 
 #TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun%d/file
 
@@ -59,6 +60,5 @@ TW_BRIGHTNESS_PATH := /sys/devices/platform/i2c-gpio.24/i2c-24/24-002c/backlight
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_INCLUDE_CRYPTO := true
-#BOARD_CUSTOM_BOOTIMG_MK := device/samsung/v1awifi/custombootimg.mk
 TW_NO_EXFAT := true
 TW_NO_EXFAT_FUSE := true
